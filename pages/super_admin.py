@@ -13,6 +13,7 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_SERVICE_KEY)
 st.markdown("""
     <style>
     [data-testid="collapsedControl"] { display: none !important; }
+    [data-testid="stSidebar"] { display: none !important; }
     .stApp { background-color: #0f172a !important; color: #f8fafc; }
     h1, h2, h3, h4, h5, h6, p, span, div, label { color: #e2e8f0 !important; }
     div[data-testid="stExpander"] { background-color: #1e293b !important; border-color: #334155 !important; }
