@@ -41,8 +41,8 @@ borde_tarjeta = color_transparente(comercio['color_principal'], 0.5)
 st.markdown(f"""
     <style>
     /* --- AQUÍ ESTÁ LA LÍNEA PARA OCULTAR EL MENÚ LATERAL --- */
-    [data-testid="collapsedControl"] {{ display: none !important; }}
-    
+    [data-testid="collapsedControl"] { display: none !important; }
+    [data-testid="stSidebar"] { display: none !important; }
     /* Fondo con más color */
     .stApp {{
         background-color: {fondo_acuarela} !important;
@@ -156,3 +156,4 @@ st.markdown("""
         Soluciones SaaS para comercios
     </div>
 """, unsafe_allow_html=True)
+    
