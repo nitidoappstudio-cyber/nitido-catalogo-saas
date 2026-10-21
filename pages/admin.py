@@ -22,6 +22,7 @@ if st.session_state.usuario is None:
     st.markdown("""
         <style>
         [data-testid="collapsedControl"] { display: none !important; }
+        [data-testid="stSidebar"] { display: none !important; }
         .stApp { background-color: #0f172a !important; color: #f8fafc !important; }
         div[data-testid="stForm"] { background-color: #1e293b !important; border: 1px solid #334155 !important; border-radius: 15px; padding: 2rem; }
         .marca-agencia { text-align: center; color: white !important; font-weight: 900; font-size: 2.5rem; margin-top: 30px; }
@@ -54,7 +55,8 @@ else:
     # Una vez que el cliente entra, forzamos que su panel sea blanco y limpio
     st.markdown("""
         <style>
-        [data-testid="collapsedControl"] { display: none !important; }
+      [data-testid="collapsedControl"] { display: none !important; }
+      [data-testid="stSidebar"] { display: none !important; }
         .stApp { background-color: #ffffff !important; color: #31333F !important; }
         h1, h2, h3, h4, h5, h6, p, span, div, label { color: #31333F !important; }
         div[data-testid="stExpander"] { background-color: #ffffff !important; border-color: #e6e6e6 !important; }
@@ -258,3 +260,7 @@ with tab3:
             supabase.table('comercios').update(datos_actualizados).eq('id', comercio_id).execute()
             st.success("Configuración actualizada.")
             st.rerun()
+   
+                  
+   
+              
