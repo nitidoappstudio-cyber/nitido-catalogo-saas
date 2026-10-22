@@ -12,8 +12,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 # ------------------------------------------------
 
-SUPABASE_URL = "https://imomygeeknnaojbicrez.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imltb215Z2Vla25uYW9qYmljcmV6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE3NjA4MjYsImV4cCI6MjEwNzMzNjgyNn0.25m7iNvfk3op6fJdtvl13N4HRvjB3zHHxoTC5LVRVKs"
+SUPABASE_URL = st.secrets["SUPABASE_URL"]
+SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # 1. IDENTIFICAR EL COMERCIO POR LA URL
