@@ -58,32 +58,30 @@ st.markdown(f"""
     [data-testid="collapsedControl"] {{ display: none !important; }}
     [data-testid="stSidebar"] {{ display: none !important; }}
     
-    /* Fondo con más color */
+    /* Fondo adaptativo */
     .stApp {{
         background-color: {fondo_acuarela} !important;
     }}
-    /* Tarjetas de productos: fondo blanco fijo y bordes con color */
+    
+    /* Bordes de las tarjetas */
     div[data-testid="stVerticalBlockBorderWrapper"] {{
-        background-color: white !important;
         border-color: {borde_tarjeta} !important;
     }}
-    /* Forzar el texto general a oscuro para que Streamlit no lo cambie */
-    .stApp, div[data-testid="stMarkdownContainer"] p {{
-        color: #222222 !important;
-    }}
     
-    /* --- CORRECCIÓN DE FILTROS EN MODO OSCURO --- */
+    /* --- CORRECCIÓN DE FILTROS --- */
     div[data-testid="stPills"] label p {{
-        color: #FFFFFF !important;
         font-weight: 600 !important;
     }}
     div[data-testid="stPills"] label[data-selected="true"] {{
         background-color: {comercio['color_principal']} !important;
         border-color: {comercio['color_principal']} !important;
+        color: white !important;
+    }}
+    div[data-testid="stPills"] label[data-selected="true"] p {{
+        color: white !important;
     }}
     div[data-testid="stPills"] label[data-selected="false"] {{
-        background-color: rgba(255, 255, 255, 0.15) !important;
-        border: 1px solid rgba(255, 255, 255, 0.4) !important;
+        border: 1px solid {borde_tarjeta} !important;
     }}
 
     .logo-redondo {{
@@ -109,7 +107,6 @@ st.markdown(f"""
 
 # --- PORTADA FIJA (Sin botón de ampliar) ---
 if comercio.get('portada_url'):
-    # Usamos HTML para que no aparezca el ícono de pantalla completa
     st.markdown(f"""
         <img src="{comercio['portada_url']}" style="width: 100%; height: 180px; object-fit: cover; border-radius: 0px 0px 15px 15px;">
     """, unsafe_allow_html=True)
@@ -188,7 +185,7 @@ if productos.data:
                 
                 c_btn1, c_btn2 = st.columns(2)
                 with c_btn1:
-                    if st.button("🛒 Sumar", key=f"cart_{p['id']}", use_container_width=True):
+                    if st.button("🛒 Agregar", key=f"cart_{p['id']}", use_container_width=True):
                         st.session_state.carrito.append({'nombre': p['nombre'], 'precio': p['precio']})
                         st.toast(f"✅ Agregado al carrito")
                         st.rerun()
