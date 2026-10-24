@@ -25,7 +25,7 @@ supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 if "tienda" in st.query_params:
     slug_comercio = st.query_params["tienda"]
 else:
-    st.error("💻 Bienvenida a Nítido App Studio. Por favor, asegúrate de ingresar al enlace completo de la tienda.")
+    st.error("💻 Te damos las bienvenida a Nítido App Studio. Por favor, asegúrate de ingresar al enlace completo de la tienda.")
     st.stop()
 
 # 2. BUSCAR EL COMERCIO EN LA BASE DE DATOS
