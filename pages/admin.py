@@ -8,7 +8,7 @@ st.set_page_config(page_title="Nítido App Studio", page_icon="💻", layout="wi
 
 # --- CONEXIÓN A SUPABASE ---
 SUPABASE_URL = st.secrets["SUPABASE_URL"]
-SUPABASE_KEY = st.secrets["SUPABASE_KEY"]
+SUPABASE_KEY = st.secrets["SUPABASE_SERVICE_KEY"]  # <-- El cambio está en esta línea
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # ==========================================
