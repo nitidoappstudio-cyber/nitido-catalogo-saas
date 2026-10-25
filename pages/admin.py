@@ -174,6 +174,7 @@ with tab2:
                 }
                 supabase.table('productos').insert(nuevo_item).execute()
                 st.success("¡Producto guardado correctamente!")
+                time.sleep(1.5)  # <-- Le da tiempo al comerciante de leer el cartel
                 st.rerun() 
             else:
                 st.warning("El nombre, el precio y la foto son obligatorios.")
