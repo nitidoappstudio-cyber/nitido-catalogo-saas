@@ -3,6 +3,7 @@ from supabase import create_client, Client
 import uuid
 from io import BytesIO
 from PIL import Image
+import time
 
 st.set_page_config(page_title="Nítido App Studio", page_icon="💻", layout="wide")
 
